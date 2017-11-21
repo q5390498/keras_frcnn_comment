@@ -28,6 +28,7 @@ class Config:
 		self.img_scaling_factor = 1.0
 
 		# number of ROIs at once
+		# 对于每张图片,　输入到分类器训练的roi数量
 		self.num_rois = 4
 
 		# stride at the RPN (this depends on the network configuration)

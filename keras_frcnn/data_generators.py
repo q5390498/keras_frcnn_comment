@@ -290,7 +290,7 @@ def get_anchor_gt(all_img_data, class_count, C, img_length_calc_function, backen
 		for img_data in all_img_data:
 			try:
 
-				# 通过sample_selector选择样本,　使得这一次的image包含的目标存在上一次image里也有
+				# 通过sample_selector选择样本,　使得这一次的image包含的目标里存在当前需要的标签
 				if C.balanced_classes and sample_selector.skip_sample_for_balanced_class(img_data):
 					continue
 

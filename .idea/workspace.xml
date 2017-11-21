@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7fa6e437-df26-4c57-a418-585863d823af" name="Default" comment="" />
+    <list default="true" id="7fa6e437-df26-4c57-a418-585863d823af" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/keras_frcnn/config.py" afterPath="$PROJECT_DIR$/keras_frcnn/config.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/keras_frcnn/data_generators.py" afterPath="$PROJECT_DIR$/keras_frcnn/data_generators.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/keras_frcnn/roi_helpers.py" afterPath="$PROJECT_DIR$/keras_frcnn/roi_helpers.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/keras_frcnn/vgg.py" afterPath="$PROJECT_DIR$/keras_frcnn/vgg.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train_frcnn.py" afterPath="$PROJECT_DIR$/train_frcnn.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,8 +23,8 @@
       <file leaf-file-name="train_frcnn.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/train_frcnn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="243" column="25" lean-forward="true" selection-start-line="243" selection-start-column="25" selection-end-line="243" selection-end-column="25" />
+            <state relative-caret-position="329">
+              <caret line="184" column="18" lean-forward="true" selection-start-line="184" selection-start-column="18" selection-end-line="184" selection-end-column="18" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -26,8 +35,8 @@
       <file leaf-file-name="roi_helpers.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/keras_frcnn/roi_helpers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1134">
-              <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+            <state relative-caret-position="-972">
+              <caret line="16" column="40" lean-forward="false" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -36,7 +45,7 @@
       <file leaf-file-name="training.py" pinned="false" current-in-tab="false">
         <entry file="file:///usr/local/lib/python2.7/dist-packages/keras/engine/training.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
+            <state relative-caret-position="195">
               <caret line="1784" column="8" lean-forward="false" selection-start-line="1784" selection-start-column="8" selection-end-line="1784" selection-end-column="8" />
               <folding />
             </state>
@@ -69,7 +78,7 @@
         <entry file="file://$PROJECT_DIR$/keras_frcnn/pascal_voc_parser.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="72">
-              <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+              <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -80,8 +89,8 @@
       <file leaf-file-name="data_generators.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/keras_frcnn/data_generators.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-747">
-              <caret line="277" column="4" lean-forward="false" selection-start-line="277" selection-start-column="4" selection-end-line="277" selection-end-column="4" />
+            <state relative-caret-position="-407">
+              <caret line="299" column="39" lean-forward="false" selection-start-line="299" selection-start-column="34" selection-end-line="299" selection-end-column="39" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -89,11 +98,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="data_augment.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/keras_frcnn/data_augment.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-147">
+              <caret line="40" column="16" lean-forward="false" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="config.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/keras_frcnn/config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+            <state relative-caret-position="146">
+              <caret line="30" column="32" lean-forward="false" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -101,11 +120,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__builtin__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.PyCharm2017.2/system/python_stubs/-1247972723/__builtin__.py">
+      <file leaf-file-name="mtrand.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.PyCharm2017.2/system/python_stubs/-1247972723/numpy/random/mtrand.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7146">
-              <caret line="397" column="4" lean-forward="false" selection-start-line="397" selection-start-column="4" selection-end-line="397" selection-end-column="4" />
+            <state relative-caret-position="375">
+              <caret line="244" column="20" lean-forward="false" selection-start-line="244" selection-start-column="20" selection-end-line="244" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -113,11 +132,16 @@
       </file>
     </leaf>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/keras_frcnn/pascal_voc_parser.py" />
         <option value="$PROJECT_DIR$/keras_frcnn/vgg.py" />
+        <option value="$PROJECT_DIR$/keras_frcnn/roi_helpers.py" />
+        <option value="$PROJECT_DIR$/keras_frcnn/config.py" />
         <option value="$PROJECT_DIR$/keras_frcnn/data_generators.py" />
         <option value="$PROJECT_DIR$/train_frcnn.py" />
       </list>
@@ -135,6 +159,7 @@
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -208,8 +233,8 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3291536" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -313,19 +338,9 @@
     <entry file="file://$PROJECT_DIR$/keras_frcnn/pascal_voc_parser.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
-          <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+          <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/keras_frcnn/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -334,6 +349,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="425" column="28" lean-forward="false" selection-start-line="425" selection-start-column="17" selection-end-line="425" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/keras/engine/training.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="1784" column="8" lean-forward="false" selection-start-line="1784" selection-start-column="8" selection-end-line="1784" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2017.2/system/python_stubs/-1247972723/numpy/random/mtrand.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="244" column="20" lean-forward="false" selection-start-line="244" selection-start-column="20" selection-end-line="244" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -348,36 +379,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/keras/engine/training.py">
+    <entry file="file://$PROJECT_DIR$/keras_frcnn/roi_helpers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="1784" column="8" lean-forward="false" selection-start-line="1784" selection-start-column="8" selection-end-line="1784" selection-end-column="8" />
+        <state relative-caret-position="-972">
+          <caret line="16" column="40" lean-forward="false" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/keras_frcnn/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="30" column="32" lean-forward="false" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/keras_frcnn/data_augment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-147">
+          <caret line="40" column="16" lean-forward="false" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/keras_frcnn/data_generators.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-747">
-          <caret line="277" column="4" lean-forward="false" selection-start-line="277" selection-start-column="4" selection-end-line="277" selection-end-column="4" />
+        <state relative-caret-position="-407">
+          <caret line="299" column="39" lean-forward="false" selection-start-line="299" selection-start-column="34" selection-end-line="299" selection-end-column="39" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/keras_frcnn/roi_helpers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1134">
-          <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/train_frcnn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="243" column="25" lean-forward="true" selection-start-line="243" selection-start-column="25" selection-end-line="243" selection-end-column="25" />
+        <state relative-caret-position="329">
+          <caret line="184" column="18" lean-forward="true" selection-start-line="184" selection-start-column="18" selection-end-line="184" selection-end-column="18" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>

@@ -179,16 +179,19 @@ for epoch_num in range(num_epochs):
 				print('Average number of overlapping bounding boxes from RPN = {} for {} previous iterations'.format(mean_overlapping_bboxes, epoch_length))
 				if mean_overlapping_bboxes == 0:
 					print('RPN is not producing bounding boxes that overlap the ground truth boxes. Check RPN settings or keep training.')
-            #X是原图,　Ｙ是分类和回归的label,img_data是数据增强后的图
+            #X是数据增强后的图,　Ｙ是分类和回归的label,img_data是数据增强后的其相关信息
 			X, Y, img_data = next(data_gen_train)
 
             #先训rpn
 			loss_rpn = model_rpn.train_on_batch(X, Y)
 
+            # rpn的输出是分类概率,　回归的边框
 			P_rpn = model_rpn.predict_on_batch(X)
 
+            # 这一步将rpn预测的结果做了一下处理,比如nms,还有超出边界等
 			R = roi_helpers.rpn_to_roi(P_rpn[0], P_rpn[1], C, K.image_dim_ordering(), use_regr=True, overlap_thresh=0.7, max_boxes=300)
 			# note: calc_iou converts from (x1,y1,x2,y2) to (x,y,w,h) format
+			# 对上一步得到的框计算iou, 并得到roi的分类label和回归的ground truth
 			X2, Y1, Y2, IouS = roi_helpers.calc_iou(R, img_data, C, class_mapping)
 
 			if X2 is None:
@@ -196,6 +199,7 @@ for epoch_num in range(num_epochs):
 				rpn_accuracy_for_epoch.append(0)
 				continue
 
+            # 将正负样本从预测的结果中抽出来
 			neg_samples = np.where(Y1[0, :, -1] == 1)
 			pos_samples = np.where(Y1[0, :, -1] == 0)
 
@@ -212,7 +216,10 @@ for epoch_num in range(num_epochs):
 			rpn_accuracy_rpn_monitor.append(len(pos_samples))
 			rpn_accuracy_for_epoch.append((len(pos_samples)))
 
+            # 以下操作是为了数据平衡,
 			if C.num_rois > 1:
+                # 如果正样本的数量小于num_rois, 那么正样本就直接拿去训练.否则, 就从正样本里随机选取num_rois个样本再送去训练
+                # 在这里,正样本数量要小于等于负样本数量
 				if len(pos_samples) < C.num_rois//2:
 					selected_pos_samples = pos_samples.tolist()
 				else:
@@ -232,6 +239,8 @@ for epoch_num in range(num_epochs):
 				else:
 					sel_samples = random.choice(pos_samples)
 
+            # 训练分类器
+            # 喂给classifier的数据　x:原图, X2[:, sel_samples, :]]: roi(x, y, w, h), Y1: 分类label，　Y2:回归groung truth
 			loss_class = model_classifier.train_on_batch([X, X2[:, sel_samples, :]], [Y1[:, sel_samples, :], Y2[:, sel_samples, :]])
 
 			losses[iter_num, 0] = loss_rpn[1]
@@ -247,6 +256,7 @@ for epoch_num in range(num_epochs):
 									  ('detector_cls', np.mean(losses[:iter_num, 2])), ('detector_regr', np.mean(losses[:iter_num, 3]))])
 
 			if iter_num == epoch_length:
+                #如果一轮结束,则根据loss大小看是否保存当前这轮的训练结果
 				loss_rpn_cls = np.mean(losses[:, 0])
 				loss_rpn_regr = np.mean(losses[:, 1])
 				loss_class_cls = np.mean(losses[:, 2])

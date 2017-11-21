@@ -69,6 +69,7 @@ def calc_iou(R, img_data, C, class_mapping):
 				print('roi = {}'.format(best_iou))
 				raise RuntimeError
 
+		# 对于每个格子,　在generate_data里都会生成一个对应的class label和回归的ground truth.
 		class_num = class_mapping[cls_name]
 		class_label = len(class_mapping) * [0]
 		class_label[class_num] = 1
@@ -254,6 +255,7 @@ def rpn_to_roi(rpn_layer, regr_layer, C, dim_ordering, use_regr=True, max_boxes=
 
 			X, Y = np.meshgrid(np.arange(cols),np. arange(rows))
 
+			# 得到x,y,w,h
 			A[0, :, :, curr_layer] = X - anchor_x/2
 			A[1, :, :, curr_layer] = Y - anchor_y/2
 			A[2, :, :, curr_layer] = anchor_x
@@ -262,13 +264,17 @@ def rpn_to_roi(rpn_layer, regr_layer, C, dim_ordering, use_regr=True, max_boxes=
 			if use_regr:
 				A[:, :, :, curr_layer] = apply_regr_np(A[:, :, :, curr_layer], regr)
 
+			# 把w, h 小于１的变成１
 			A[2, :, :, curr_layer] = np.maximum(1, A[2, :, :, curr_layer])
 			A[3, :, :, curr_layer] = np.maximum(1, A[3, :, :, curr_layer])
+			# 将w,h 变成x2,y2
 			A[2, :, :, curr_layer] += A[0, :, :, curr_layer]
 			A[3, :, :, curr_layer] += A[1, :, :, curr_layer]
 
+			#将x1, y2小于０的变成０. PS:这些超出了边界的框,是否该直接删除呢？？
 			A[0, :, :, curr_layer] = np.maximum(0, A[0, :, :, curr_layer])
 			A[1, :, :, curr_layer] = np.maximum(0, A[1, :, :, curr_layer])
+			#　将x2, y2超出边框的变成最右或者最下面的点
 			A[2, :, :, curr_layer] = np.minimum(cols-1, A[2, :, :, curr_layer])
 			A[3, :, :, curr_layer] = np.minimum(rows-1, A[3, :, :, curr_layer])
 
@@ -282,11 +288,13 @@ def rpn_to_roi(rpn_layer, regr_layer, C, dim_ordering, use_regr=True, max_boxes=
 	x2 = all_boxes[:, 2]
 	y2 = all_boxes[:, 3]
 
+	# 删除存在右下角在左上角上方或者左方的
 	idxs = np.where((x1 - x2 >= 0) | (y1 - y2 >= 0))
 
 	all_boxes = np.delete(all_boxes, idxs, 0)
 	all_probs = np.delete(all_probs, idxs, 0)
 
+	#做nms抑制
 	result = non_max_suppression_fast(all_boxes, all_probs, overlap_thresh=overlap_thresh, max_boxes=max_boxes)[0]
 
 	return result
